@@ -2,11 +2,14 @@ package com.fourtk.systemcell.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +35,13 @@ public class Church implements Serializable{
 	private Instant dateFundation;
 	private String imgUrl;
 	
+	@OneToMany(mappedBy = "church")
+	private List<Cell> cells = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "church")
+	private List<User> users = new ArrayList<>();
+	
+	
 	public Church() {
 		// TODO Auto-generated constructor stub
 	}	
@@ -39,8 +49,7 @@ public class Church implements Serializable{
 	public Church(Long id, String name, String email, String cnpj, String address, Integer number, String complement,
 			String city, String state, String telFixo, String telCelular, Instant dateRegister, Instant dateFundation,
 			String imgUrl) {
-		super();
-		Id = id;
+		this.Id = id;
 		this.name = name;
 		this.email = email;
 		this.cnpj = cnpj;
@@ -54,10 +63,7 @@ public class Church implements Serializable{
 		this.dateRegister = dateRegister;
 		this.dateFundation = dateFundation;
 		this.imgUrl = imgUrl;
-	}
-
-	
-	
+	}	
 	public Long getId() {
 		return Id;
 	}
@@ -168,6 +174,10 @@ public class Church implements Serializable{
 
 	public void setDateFundation(Instant dateFundation) {
 		this.dateFundation = dateFundation;
+	}
+
+	public List<Cell> getCells() {
+		return cells;
 	}
 
 	@Override

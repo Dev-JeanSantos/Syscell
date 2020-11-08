@@ -89,6 +89,21 @@ public class User implements UserDetails, Serializable{
 	}
 
 
+
+
+	public List<Notification> getNotifications() {
+		return notifications;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -129,32 +144,32 @@ public class User implements UserDetails, Serializable{
 	}
 
 
-	public String getSexo() {
+	public String getGenre() {
 		return genre;
 	}
 
 
-	public void setSexo(String genre) {
+	public void setGenre(String genre) {
 		this.genre = genre;
 	}
 
 
-	public String getEndereco() {
+	public String getAddress() {
 		return address;
 	}
 
 
-	public void setEndereco(String address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
 
-	public Integer getNumero() {
+	public Integer getNumber() {
 		return number;
 	}
 
 
-	public void setNumero(Integer number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 
@@ -169,12 +184,12 @@ public class User implements UserDetails, Serializable{
 	}
 
 
-	public String getCidade() {
+	public String getCity() {
 		return city;
 	}
 
 
-	public void setCidade(String city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 
@@ -209,10 +224,6 @@ public class User implements UserDetails, Serializable{
 	}
 
 
-	public Set<Role> getRoles() {
-		return roles;
-	}
-	
 	public Cell getCell() {
 		return cell;
 	}
@@ -221,7 +232,8 @@ public class User implements UserDetails, Serializable{
 	public void setCell(Cell cell) {
 		this.cell = cell;
 	}
-	
+
+
 	public Church getChurch() {
 		return church;
 	}
@@ -231,17 +243,14 @@ public class User implements UserDetails, Serializable{
 		this.church = church;
 	}
 
-	public List<Notification> getNotifications() {
-		return notifications;
+
+	public Set<Role> getRoles() {
+		return roles;
 	}
 
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+	public void setNotifications(List<Notification> notifications) {
+		this.notifications = notifications;
 	}
 
 

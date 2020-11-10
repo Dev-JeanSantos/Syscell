@@ -2,9 +2,7 @@ package com.fourtk.systemcell.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -48,7 +46,7 @@ public class Cell implements Serializable{
 	private Church church;
 	
 	@OneToMany(mappedBy = "cell")
-	private List<User> users = new ArrayList<>();
+	private Set<User> users = new HashSet<>();
 	
 	public Cell() {
 		// TODO Auto-generated constructor stub
@@ -138,14 +136,10 @@ public class Cell implements Serializable{
 
 	public void setChurch(Church church) {
 		this.church = church;
-	}
-	
-	public List<User> getUsers() {
-		return users;
-	}
+	}	
 
-	public Set<Study> getStudys() {
-		return studys;
+	public Set<User> getUsers() {
+		return users;
 	}
 
 	@Override

@@ -299,6 +299,16 @@ public class User implements UserDetails, Serializable{
 	@Override
 	public boolean isEnabled() {
 		return true;
-	}	
+	}
+	
+	public boolean hasHole(String roleName) {
+		
+		for (Role role : roles) {
+			if(role.getAuthority().equals(roleName)){
+				return true;
+			}
+		}
+		return false;		
+	}
 
 }

@@ -1,6 +1,8 @@
 package com.fourtk.systemcell.dto;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.fourtk.systemcell.entities.User;
 
@@ -19,6 +21,8 @@ public class UserDTO implements Serializable{
 	private String telFixo;
 	private String telCelular;
 	private String imgUrl;
+
+	private Set<RoleDTO> roles = new HashSet<>();
 	
 	UserDTO(){
 		
@@ -51,6 +55,8 @@ public class UserDTO implements Serializable{
 		telFixo = entity.getTelFixo();		
 		telCelular = entity.getTelCelular();
 		imgUrl = entity.getImgUrl();
+		
+		entity.getRoles().forEach(role -> this.roles.add(new RoleDTO(role)));
 	}
 	
 	public Long getId() {
@@ -140,4 +146,8 @@ public class UserDTO implements Serializable{
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}	
+	
+	public Set<RoleDTO> getRoles() {
+		return roles;
+	}
 }

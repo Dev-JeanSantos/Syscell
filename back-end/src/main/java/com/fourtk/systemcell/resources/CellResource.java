@@ -20,39 +20,37 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.fourtk.systemcell.dto.UserDTO;
-import com.fourtk.systemcell.dto.UserInsertDTO;
-import com.fourtk.systemcell.dto.UserUpdateDTO;
-import com.fourtk.systemcell.services.UserService;
+import com.fourtk.systemcell.dto.CellDTO;
+import com.fourtk.systemcell.services.CellService;
 
 @RestController
-@RequestMapping(value = "/users")
-public class UserResource {
+@RequestMapping(value = "/cells")
+public class CellResource {
 	
 	@Autowired
-	private UserService service;
+	private CellService service;
 	
 	@GetMapping
-	public ResponseEntity<Page<UserDTO>> findAllPaged(
+	public ResponseEntity<Page<CellDTO>> findAllPaged(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "linesPerPage", defaultValue = "12") Integer linesPerPage,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
 			@RequestParam(value = "orderBy", defaultValue = "Id") String orderBy			
 			){		
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage,Direction.valueOf(direction), orderBy );
-		Page<UserDTO> list = service.findAllPaged(pageRequest);		
+		Page<CellDTO> list = service.findAllPaged(pageRequest);		
 		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
-		UserDTO dto = service.findById(id);
+	public ResponseEntity<CellDTO> findById(@PathVariable Long id) {
+		CellDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}
 	
 	@PostMapping
-	public ResponseEntity<UserDTO> insert(@Valid @RequestBody UserInsertDTO dto){
-		UserDTO userdto = service.insert(dto);	
+	public ResponseEntity<CellDTO> insert(@Valid @RequestBody CellDTO dto){
+		CellDTO userdto = service.insert(dto);	
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(userdto.getId()).toUri();
 		
@@ -60,13 +58,13 @@ public class UserResource {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<UserDTO> update(@PathVariable Long id, @Valid @RequestBody UserUpdateDTO dto){
-		UserDTO newdto = service.update(id, dto);
+	public ResponseEntity<CellDTO> update(@PathVariable Long id, @Valid @RequestBody CellDTO dto){
+		CellDTO newdto = service.update(id, dto);
 		return ResponseEntity.ok().body(newdto);	
 	}
 	
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<UserDTO> delete(@PathVariable Long id){
+	public ResponseEntity<CellDTO> delete(@PathVariable Long id){
 		service.delete(id);		
 		return ResponseEntity.noContent().build();
 	}

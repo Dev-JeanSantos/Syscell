@@ -1,25 +1,14 @@
-package com.fourtk.systemcell.entities;
+package com.fourtk.systemcell.dto;
 
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import com.fourtk.systemcell.entities.Church;
 
-@Entity
-@Table(name = "tb_church")
-public class Church implements Serializable{
+public class ChurchDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-		
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long id;
 	private String name;
 	private String email;
@@ -35,18 +24,11 @@ public class Church implements Serializable{
 	private Instant dateFundation;
 	private String imgUrl;
 	
-	@OneToMany(mappedBy = "church")
-	private List<Cell> cells = new ArrayList<>();
+	ChurchDTO(){
+		
+	}
 	
-	@OneToMany(mappedBy = "church")
-	private List<User> users = new ArrayList<>();
-	
-	
-	public Church() {
-		// TODO Auto-generated constructor stub
-	}	
-	
-	public Church(Long id, String name, String email, String cnpj, String address, Integer number, String complement,
+	public ChurchDTO(Long id, String name, String email, String cnpj, String address, Integer number, String complement,
 			String city, String state, String telFixo, String telCelular, Instant dateRegister, Instant dateFundation,
 			String imgUrl) {
 		this.id = id;
@@ -63,12 +45,30 @@ public class Church implements Serializable{
 		this.dateRegister = dateRegister;
 		this.dateFundation = dateFundation;
 		this.imgUrl = imgUrl;
-	}	
-	public Long getid() {
+	}
+	
+	public ChurchDTO(Church entity) {
+		id = entity.getid();
+		name = entity.getName();
+		email = entity.getCnpj();
+		cnpj = entity.getCnpj();
+		address = entity.getAddress();
+		number = entity.getNumber();
+		complement = entity.getComplement();
+		city = entity.getCity();
+		state = entity.getState();
+		telFixo = entity.getTelFixo();
+		telCelular = entity.getTelCelular();
+		dateRegister = entity.getDateRegister();
+		dateFundation = entity.getDateFundation();
+		imgUrl = entity.getImgUrl();
+	}
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setid(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -152,14 +152,6 @@ public class Church implements Serializable{
 		this.telCelular = telCelular;
 	}
 
-	public String getImgUrl() {
-		return imgUrl;
-	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-	}
-		
 	public Instant getDateRegister() {
 		return dateRegister;
 	}
@@ -176,33 +168,13 @@ public class Church implements Serializable{
 		this.dateFundation = dateFundation;
 	}
 
-	public List<Cell> getCells() {
-		return cells;
+	public String getImgUrl() {
+		return imgUrl;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Church other = (Church) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}	
 	
 }

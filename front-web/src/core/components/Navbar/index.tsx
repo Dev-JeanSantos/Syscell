@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import ButtonMenu from '../ButtonMenu';
 import './styles.scss'
 
 const Navbar = () => (
     <nav className="row bg-primary nav-container">
         <div className="col-1 nav-icon">
-               <a href="link" className="nav-logo">
+               <Link to="/" className="nav-logo"  >
                  Logo
-               </a>
+               </Link>
         </div>
         <div className="col-2 nav-icon2">
             Vidas em Celulas
@@ -15,19 +16,19 @@ const Navbar = () => (
         <div className="col-6">
             <ul className="main-menu">
                 <li>
-                 <a href="link">
+                 <NavLink to="/sistema" activeClassName="active">
                    Conhecendo o Sistema
-                 </a>
+                 </NavLink>
                 </li>
                 <li>
-                 <a href="link">
+                 <NavLink to="/igreja"  activeClassName="active">
                     Conhecendo a Igreja
-                 </a>
+                 </NavLink>
                 </li>
                 <li>
-                 <a href="link">
+                 <NavLink to="/celula"  activeClassName="active">
                     Conhecendo à Célula
-                 </a>
+                 </NavLink>
                 </li>
             </ul>
         </div>

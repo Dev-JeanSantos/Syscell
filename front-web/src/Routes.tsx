@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import Auth from './pages/Auth';
 import Celula from './pages/Celula';
 import Home from './pages/Home';
 import Igreja from './pages/Igreja';
@@ -19,6 +20,9 @@ const Routes = () => (
             </Route>
             <Route path="/celula">
                 <Celula/>
+            </Route>
+            <Route path="/auth">
+                <Auth/>
             </Route>
         </Switch>
     </BrowserRouter>

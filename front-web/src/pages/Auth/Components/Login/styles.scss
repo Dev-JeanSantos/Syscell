@@ -1,3 +1,11 @@
+.container-login{
+    .form-container{
+        height: 400px;
+    }
+}
+.form-label{
+    margin-top: 15px;
+}
 .input-base{
     border: 1px solid #E1E1E1;
     box-sizing: border-box;
@@ -45,5 +53,17 @@
     
     a{
         color:#263238;
+    }
+}
+
+.btn-cancelar{
+    .btn-text{
+        color: #F69C00;
+    }
+}
+
+.btn-login{
+    .btn-text{
+        color: #5D5D5D;
     }
 }

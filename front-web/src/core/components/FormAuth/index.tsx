@@ -9,7 +9,7 @@ type Props = {
 const FormAuth = ({textTitle, children}:Props) => {
   return (
       <div className="form-container">
-        <div className="text-tile">{textTitle}</div>
+        <div className="text-title">{textTitle}</div>
         {children}
       </div>
   );

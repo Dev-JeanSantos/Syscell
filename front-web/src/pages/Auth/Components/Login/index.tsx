@@ -1,13 +1,12 @@
 import React from 'react';
-import ButtonFormCancel from '../../../../core/components/ButtonFormCancel';
-import ButtonFormLogin from '../../../../core/components/ButtonFormLogin';
 import FormAuth from '../../../../core/components/FormAuth';
 import './styles.scss'
+import ButtonForm from '../../../../core/components/ButtonForm';
 
 const Login = () => {
 
     return (
-        <div>
+        <div className="container-login">
             <FormAuth textTitle="Faça o seu Login">
                 <form className="form-content">
                     <div className="form-label">Digite seu Email</div>
@@ -25,8 +24,12 @@ const Login = () => {
                     ></input>
                     <a href="/auth/recuperar" className="form-label-link">Esqueceu sua senha?</a>
                     <div className="container-button">
-                        <ButtonFormCancel nameMenu="Cancelar" link="/" />
-                        <ButtonFormLogin nameMenu="Fazer Login" link="#/" />
+                        <div className="btn-cancelar">
+                            <ButtonForm nameMenu="Cancelar" link="/" />
+                        </div>
+                        <div className="btn-login">
+                            <ButtonForm nameMenu="Fazer Login" link="#/" />
+                        </div>
                     </div>
                 </form>
 

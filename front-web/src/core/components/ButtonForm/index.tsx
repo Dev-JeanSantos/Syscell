@@ -7,11 +7,11 @@ type Props = {
     nameMenu: string
 }
 
-const ButtonFormLogin = ( {nameMenu, link}:Props) => (
+const ButtonForm = ( {nameMenu, link}:Props) => (
     <Link to={link}>
-        <button className="btn-men">
+        <button className="btn-form">
             <p 
-            className="btn-text-login"
+            className="btn-text"
             >
                 {nameMenu}
             </p>
@@ -20,4 +20,4 @@ const ButtonFormLogin = ( {nameMenu, link}:Props) => (
     
 )
 
-export default ButtonFormLogin;
+export default ButtonForm;

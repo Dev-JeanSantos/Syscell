@@ -1,14 +1,14 @@
 import React from 'react';
-import ButtonFormCancel from '../../../../core/components/ButtonFormCancel';
-import ButtonFormLogin from '../../../../core/components/ButtonFormLogin';
 import FormAuth from '../../../../core/components/FormAuth';
 import './styles.scss'
+import ButtonForm from '../../../../core/components/ButtonForm';
 
 const Cadastro = () => {
 
     return (
-        <FormAuth textTitle="Faça o seu Cadastro">
-            <form className="form-content">
+        <div className="cadastro-container">
+            <FormAuth textTitle="Faça o seu Cadastro">
+                <form className="form-content">
                     <div className="form-label">Digite seu Nome Completo</div>
                     <input
                         type="text"
@@ -24,18 +24,29 @@ const Cadastro = () => {
                     >
                     </input>
                     <div className="form-label">Digite sua Senha</div>
-                    <input
-                        type="password"
-                        className="input-base"
-                        placeholder="Senha"
-                    ></input>
-                    <a href="/auth/recuperar" className="form-label-link">Esqueceu sua senha?</a>
+                    <div className="form-password">
+                        <input
+                            type="password"
+                            className="input-base col-5"
+                            placeholder="Senha"
+                        ></input>
+                        <input
+                            type="password"
+                            className="input-base col-5"
+                            placeholder="Repita Senha"
+                        ></input>
+                    </div>
                     <div className="container-button">
-                        <ButtonFormCancel nameMenu="Cancelar" link="/" />
-                        <ButtonFormLogin nameMenu="Fazer Login" link="#/" />
+                        <div className="btn-cancelar">
+                            <ButtonForm nameMenu="Cancelar" link="/auth/login" />
+                        </div>
+                        <div className="btn-login">
+                            <ButtonForm nameMenu="Fazer Cadastro" link="#/" />
+                        </div>
                     </div>
                 </form>
-        </FormAuth>
+            </FormAuth>
+        </div>
     );
 }
 

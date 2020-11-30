@@ -29,3 +29,8 @@
     color: #FFFFFF;
     opacity: 1;
 }
+
+.textarea:focus, input:focus, select:focus, button:focus{
+  border: 0 none;
+  outline: 0;
+} 

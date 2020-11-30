@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import Admin from './pages/Admin';
 import Auth from './pages/Auth';
 import Celula from './pages/Celula';
 import Home from './pages/Home';
@@ -23,6 +24,9 @@ const Routes = () => (
             </Route>
             <Route path="/auth">
                 <Auth/>
+            </Route>
+            <Route path="/admin">
+                <Admin/>
             </Route>
         </Switch>
     </BrowserRouter>

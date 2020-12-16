@@ -3,8 +3,6 @@
 
 # Sobre o projeto
 
-https://wmazoni-sds1.netlify.app
-
 O SYSCELL é uma aplicação full stack web construída como projeto pessoal do autor para aplicação dos conceitos práticos e téoricos dos contéudos adquiridos no BOOTCAMP 1.0 Dev-Superior 1.0 organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
 
 A aplicação consiste no cadastro e gerenciamento de membros, células e igrejas onde os dados serão processados gerando relatórios precisos e essenciais para uma melhor administração para pastores e dirigentes, toda a aplicação é um app web, que também apresenta um interfaces intuitivas com gráficos baseados nestes dados.
@@ -20,7 +18,7 @@ A aplicação consiste no cadastro e gerenciamento de membros, células e igreja
 ![Web 4](https://github.com/Dev-JeanSantos/assets/blob/main/syscell/cadastro.png)
 
 ## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+![Modelo Conceitual](https://github.com/Dev-JeanSantos/assets/blob/main/syscell/uml.png)
 
 # Tecnologias utilizadas
 ## Back end

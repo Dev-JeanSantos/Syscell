@@ -10,9 +10,14 @@ O SYSCELL é uma aplicação full stack web construída como projeto pessoal do 
 A aplicação consiste no cadastro e gerenciamento de membros, células e igrejas onde os dados serão processados gerando relatórios precisos e essenciais para uma melhor administração para pastores e dirigentes, toda a aplicação é um app web, que também apresenta um interfaces intuitivas com gráficos baseados nestes dados.
 
 ## Layout web
-![Web 1](https://github.com/Dev-JeanSantos/assets/blob/main/syscell/cadastro.png)
+
+![Web 1](https://github.com/Dev-JeanSantos/assets/blob/main/syscell/home.png)
 
 ![Web 2](https://github.com/Dev-JeanSantos/assets/blob/main/syscell/celulas.png)
+
+![Web 3](https://github.com/Dev-JeanSantos/assets/blob/main/syscell/login.png)
+
+![Web 4](https://github.com/Dev-JeanSantos/assets/blob/main/syscell/cadastro.png)
 
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
